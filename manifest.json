@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Image Downloader",
+    "version": "1.0.0",
+    "description": "Faça download de images.",
+    "icons": {
+        "48": "icon48.png",
+        "128": "icon128.png"
+    },
+   "background": {
+       "service_worker": "src/background.js"
+   },
+  "action": {
+        "default_icon": {
+            "19": "icon19.png",
+            "38": "icon38.png"
+        },
+        "default_title": "Image Downloader",
+        "default_popup": "src/pages/index.html"
+    },
+    "content_scripts": [
+        {
+            "js": [
+                "src/components/button.js",
+                "src/main.js"
+            ],
+            "matches": [
+                "https://www.google.com/*"
+            ]
+        }
+    ]
+}
